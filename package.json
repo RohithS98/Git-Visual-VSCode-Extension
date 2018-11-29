@@ -18,7 +18,7 @@
         "commands": [
             {
                 "command": "extension.sayHello",
-                "title": "Git History V1"
+                "title": "Git Visual History V2"
             },
             {
                 "command": "extension.vscexpress",

@@ -19,9 +19,13 @@ This will install all the dependencies.
 
 4. Use ctrl + shift + p to open command palette.
 
-5. Run Git History V1 command.
+5. Run Git Visual History V2 command.
 
-6. The Git history will open in a new file.
+6. The Git Visual will open in a new file.
+
+7. Click on the "Get Git History" button to display the history below
+
+Moving the mouse over a commit will show its commit message.
 
 In case an error message saying "Extension not found" appears, reload the developer mode. If the issue persists, then dependencies were not installed.
 
@@ -29,6 +33,10 @@ In case an error message saying "Cannot read property 'state' of undefined", wai
 
 ## Release Notes
 
-### 0.1 (Current Release)
+## 2 (Current Release)
+
+Added GUI and small animations.
+
+### 1 
 
 Only text history for current branch is displayed in a text file.
