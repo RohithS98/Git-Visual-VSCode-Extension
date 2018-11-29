@@ -19,6 +19,10 @@
             {
                 "command": "extension.sayHello",
                 "title": "Git History V1"
+            },
+            {
+                "command": "extension.vscexpress",
+                "title": "Visual Button"
             }
         ]
     },
@@ -35,5 +39,10 @@
         "tslint": "^5.8.0",
         "@types/node": "^8.10.25",
         "@types/mocha": "^2.2.42"
+    },
+    "dependencies": {
+        "@types/express-serve-static-core": "^4.16.0",
+        "animejs": "^2.2.0",
+        "vscode-express": "^0.1.11"
     }
 }

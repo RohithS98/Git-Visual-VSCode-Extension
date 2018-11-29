@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <button onclick="doIt()">Hello</button>
+  <div>
+    <div id="temp"></div>
+    <p id="t2">Something</p>
+  </div>
+  <script>
+    function command(cmd, callback) {
+        if (!cmd) {
+          return;
+        }
+        let args = Array.from(arguments);
+        if (typeof args[args.length - 1] === 'function') {
+          callback = args[args.length - 1];
+          args.length = args.length - 1;
+        } else {
+          callback = undefined;
+        }
+        const data = encodeURIComponent(JSON.stringify(args));
+        const url = `/command?data=${data}`;
+      
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              if (callback) {
+                // var t = JSON.stringify(JSON.parse(xhr.responseText),null,1);
+                // var t1 = JSON.parse(xhr.responseText);
+                // document.getElementById("temp").innerHTML = t1.result;
+                callback(JSON.parse(xhr.responseText).result);
+              }
+            } else {
+              if (callback) {
+                callback(null);
+              }
+            }
+          }
+        }
+        xhr.open('GET', url, true);
+        xhr.send();
+    }
+    
+    
+    function doIt(){
+      command('extension.sayHello',function(res){
+        res = res.split(";");
+        var commits = [];
+        var s = ""
+        for(var  i = 0 ; i < res.length ; i++){
+          res[i] = String(res[i]);
+          var t = res[i].split(",");
+          document.getElementById("t2").innerHTML = typeof t[0];
+          commits.concat(t[0],t[1]);
+          s += '<div class="tooltip">'+t[0]+'<span class="tooltiptext">'+t[1]+'</span></div><br />';
+        }
+        document.getElementById("temp").innerHTML = s;
+        
+      });
+    }
+    </script>
+</body>
+</html>
