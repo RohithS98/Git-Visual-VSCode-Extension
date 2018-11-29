@@ -38,7 +38,7 @@ export function activate(context: vscode.ExtensionContext) {
 
     let disposable = vscode.commands.registerCommand('extension.sayHello', async () => {
         // The code you place here will be executed every time your command is executed
-        vscexpress.open('index.html', 'VS Code Express Example',vscode.ViewColumn.One);
+        vscexpress.open('index.html', 'Git Visual VSCode',vscode.ViewColumn.One);
         var headB = api.repositories[0].state.HEAD;
         var comName = headB.commit;
         var com = await api.repositories[0].getCommit(comName);
