@@ -8,10 +8,17 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <button onclick="doIt()">Hello</button>
-  <div>
+  <div class="heading">
+    <h1>Git Visual</h1>
+  </div>
+  <div class="buttonSlot">
+    <div class="button1">
+      <button onclick="doIt()">Get Git History</button>
+    </div>
+  </div>
+  <div class="hello">
     <div id="temp"></div>
-    <p id="t2">Something</p>
+    <p id="t2"></p>
   </div>
   <script>
     function command(cmd, callback) {
@@ -55,13 +62,16 @@
         res = res.split(";");
         var commits = [];
         var s = ""
-        for(var  i = 0 ; i < res.length ; i++){
+        for(var  i = 0 ; i < res.length - 1 ; i++){
           res[i] = String(res[i]);
           var t = res[i].split(",");
-          document.getElementById("t2").innerHTML = typeof t[0];
           commits.concat(t[0],t[1]);
-          s += '<div class="tooltip">'+t[0]+'<span class="tooltiptext">'+t[1]+'</span></div><br />';
+          s += '<div class="tooltip"><img src="Dot1.svg" alt="commit" class="comDot"><span class="tooltiptext">'+t[1]+'</span><span class="tooltiptext2">'+t[0]+'</span></div><br /><img src="Arrow1.svg" alt="arrow" class="flowArrow"><br />';
         }
+        res[res.length-1] = String(res[res.length-1]);
+        var t = res[res.length-1].split(",");
+        commits.concat(t[0],t[1]);
+        s += '<div class="tooltip"><img src="Dot1.svg" alt="commit" class="comDot"><span class="tooltiptext">'+t[1]+'</span><span class="tooltiptext2">'+t[0]+'</span></div><br /><br />';
         document.getElementById("temp").innerHTML = s;
         
       });

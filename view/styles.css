@@ -2,34 +2,122 @@ p{
     color: aliceblue;
 }
 
+h1{
+    color: aliceblue;
+    font-size: 70px;
+    margin-bottom: 10px; 
+}
+
+body{
+    background-color: black;
+}
+
+.heading{
+    width: 100%;
+    text-align: center;
+}
+
+.buttonSlot{
+    display: flex;
+    justify-content: center;
+}
+
+.hello{
+    display: flex;
+    justify-content: center;
+}
+
+.button1{
+    display: block;
+    margin : auto;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+.button1 button{
+    background-color: green;
+    width: 180px;
+    height: 50px;
+    border-color: #aaffaa;
+    border-radius: 6px;
+    border-width: 4px;
+    color: black;
+    font-size: 18px;
+}
+
+.button1 button:hover{
+    background-color: #00aa00;
+    border-color: #aaffaa;
+}
+
 .tooltip {
     position: relative;
     display: inline-block;
     border-bottom: 1px dotted black;
     color: #fff;
-    margin-bottom: 20px;
-    margin-top: 10px;
+    /* margin-bottom: 20px;
+    margin-top: 10px; */
 }
 
 .tooltip .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: black;
+    /* visibility: hidden; */
+    /* width: fit-content; */
+    /* background-color: blue; */
     color: #fff;
     text-align: center;
     border-radius: 6px;
-    padding: 5px 0;
+    padding-left: 5px;
+    padding-right: 5px;
 
     /* Position the tooltip */
     position: absolute;
     z-index: 1;
 }
 
-.tooltip:hover .tooltiptext {
+.tooltip .tooltiptext2 {
+    visibility: hidden;
+    /* width: fit-content; */
+    /* background-color: blue; */
+    color: #fff;
+    text-align: center;
+    border: 10px;
+    border-radius: 6px;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 2;
+    white-space: pre;
+}
+
+/* .tooltip:hover .tooltiptext {
+    visibility: visible;
+} */
+
+.tooltip .tooltiptext {
+    top: 5px;
+}
+
+.tooltip:hover .tooltiptext2 {
     visibility: visible;
 }
 
-.tooltip .tooltiptext {
-    top: -5px;
-    left: 108%;
+.tooltip .tooltiptext2 {
+    top: 30px;
+}
+
+.comDot{
+    height: 50px;
+    width: 50px;
+    position: relative;
+    right: 100%;
+}
+
+.flowArrow{
+    height: 40px;
+    width: auto;
+    margin-left: 18px;
+    position: relative;
+    right: 100%;
 }
